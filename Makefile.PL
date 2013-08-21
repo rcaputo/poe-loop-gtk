@@ -73,7 +73,7 @@ WriteMakefile(
     resources     => {
       license     => 'http://dev.perl.org/licenses/',
       repository  => (
-        'https://poe.svn.sourceforge.net/svnroot/poe/trunk/polo-gtk'
+        'https://github.com/rcaputo/poe-loop-gtk.git'
       ),
     },
   },
@@ -81,7 +81,7 @@ WriteMakefile(
     COMPRESS      => 'gzip -9f',
     SUFFIX        => 'gz',
     PREOP         => (
-      'svn-log.perl --tags ^plg- | ' .
+      'git-log.pl | ' .
       '/usr/bin/tee ./$(DISTNAME)-$(VERSION)/CHANGES > ./CHANGES'
     ),
   },
@@ -90,17 +90,17 @@ WriteMakefile(
 
   CONFIGURE_REQUIRES => {
     'ExtUtils::MakeMaker' => 0,
-    'POE::Test::Loops'    => 1.035,
+    'POE::Test::Loops'    => 1.352,
   },
 
   META_MERGE      => {
     build_requires => {
-      'POE::Test::Loops'    => 1.035,
+      'POE::Test::Loops'    => 1.352,
     },
   },
 
   PREREQ_PM       => {
-    'POE'               => 1.289,
+    'POE'               => 1.356,
     'Gtk'               => 0.7009,
   },
 );

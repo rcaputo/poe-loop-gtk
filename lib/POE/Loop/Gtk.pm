@@ -9,7 +9,7 @@ use strict;
 use POE::Loop::PerlSignals;
 
 use vars qw($VERSION);
-$VERSION = '1.305'; # NOTE - Should be #.### (three decimal places)
+$VERSION = '1.306'; # NOTE - Should be #.### (three decimal places)
 
 =for poe_tests
 
@@ -336,26 +336,47 @@ __END__
 
 =head1 NAME
 
-POE::Loop::Gtk - a bridge that allows POE to be driven by Gtk
+POE::Loop::Gtk - a bridge that allows POE to be driven by Gtk 1.x
 
 =head1 SYNOPSIS
 
 See L<POE::Loop>.
 
+  use Gtk;
+  use POE;
+
+  # Rest of your program here.
+
 =head1 DESCRIPTION
+
+POE::Loop::Gtk replaces POE's internal event loop with the Gtk module.
+This allows programs to use both POE and Gtk 1.x at the same time.
+
+Please see L<POE::Loop::Glib> for more modern Gtk2 and Gtk3 support.
 
 POE::Loop::Gtk implements the interface documented in L<POE::Loop>.
 Therefore it has no documentation of its own.  Please see L<POE::Loop>
 for more details.
 
+=head1 HELP WANTED
+
+This project needs a developer or tester.  Nobody can seem to get the
+Gtk dependency built to verify whether this event loop adapter works.
+Maybe you can?
+
+=head1 BUGS
+
+None known, but see L</HELP WANTED>.
+
 =head1 SEE ALSO
 
-L<POE>, L<POE::Loop>, L<Gtk>, L<POE::Loop::PerlSignals>
+L<POE>, L<POE::Loop>, L<Gtk>, L<POE::Loop::Glib>, L<POE::Loop::PerlSignals>
 
 =head1 AUTHORS & LICENSING
 
-Please see L<POE> for more information about authors, contributors,
-and POE's licensing.
+POE::Loop::Gtk is Copyright 1998-2013 Rocco Caputo.  All rights
+reserved.  POE::Loop::Gtk is free software; you may redistribute it
+and/or modify it under the same terms as Perl itself.
 
 =cut
 
